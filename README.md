@@ -56,6 +56,29 @@ The project uses a custom Tailwind configuration (`tailwind.config.ts`) with:
 - **Custom Animations and Keyframes**:
   - `cursor-blink`: Main Hero section for emphasis
 
+### Global CSS Configuration
+
+- **Themed Colors and Custom Classes**:
+
+abstracts this common centering technique for absolutely positioned DIVs
+
+```@layer base {
+:root {
+  --color-violet-400: theme("colors.violet.400");
+  --color-fuchsia-400: theme("colors.fuchsia.400");
+  --color-amber-300: theme("colors.amber.300");
+  --color-teal-300: theme("colors.teal.300");
+  --color-gray-950: theme("colors.gray.950");
+}
+
+.absolute-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+}
+```
+
+````
+
 ### PostCSS Configuration
 
 The project uses a minimal PostCSS setup (`postcss.config.mjs`) with:
@@ -73,7 +96,8 @@ The project uses a minimal PostCSS setup (`postcss.config.mjs`) with:
 2. Install dependencies:
    ```bash
    npm install
-   ```
+````
+
 3. Run development server:
    ```bash
    npm run dev
