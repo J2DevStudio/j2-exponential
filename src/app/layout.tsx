@@ -14,8 +14,8 @@ const spaceGroteskFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Exponential | J2 DevStudio",
-  description: "Exponential | Agentive AI Automation - J2 DevStudio",
+  title: "Exponential | Agentive AI Platform",
+  description: "Exponential | an Agentive AI Platform by J2 DevStudio",
 };
 
 export default function RootLayout({

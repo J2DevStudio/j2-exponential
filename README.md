@@ -1,8 +1,10 @@
-# Exponential | Agentive AI Automation - J2 DevStudio
+# Exponential | Agentive AI
+
+Exponential | an Agentive AI Platform by J2 DevStudio
 
 ## Overview
 
-A modern, animated portfolio website built with Next.js, TypeScript, and Tailwind CSS. The site features an engaging hero section with orbital animations and a clean, professional design.
+Exponential is a software subscription as a service platform featuring custom AI-powered software solutions for businesses and individuals. Built with Next.js, TypeScript, and Tailwind CSS. The site features an engaging hero section with orbital animations and a clean, professional design.
 
 ## 🚀 CI / CD
 
