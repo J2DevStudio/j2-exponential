@@ -1,10 +1,12 @@
 "use client";
 
-import logoImage from "@/assets/images/exponential-logo.svg?url";
 import { Button, ButtonProps } from "@/components/Button";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Orbit } from "@/components/Orbit";
+//import { SectionBorder } from "@/components/SectionBorder";
+//import { SectionContent } from "@/components/SectionContent";
+import { Logo } from "@/components/Logo";
 
 // using twMerge to change the classes based on the state of the NAV <Button /> component
 // menu is open or closed - react useState -- setIsOpen
@@ -51,13 +53,7 @@ export const Header = () => {
         <div className="container">
           <div className="h-18 lg:h-20 flex justify-between items-center">
             <div className="flex gap-4 items-center">
-              <div
-                className="size-10 bg-gray-200 bg-[conic-gradient(from_45deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))]"
-                style={{
-                  maskImage: `url(${logoImage.src})`,
-                  maskSize: "contain",
-                }}
-              ></div>
+              <Logo />
               <div className="font-extrabold text-2xl">Exponential</div>
             </div>
             <div className="h-full hidden lg:block">
@@ -106,8 +102,10 @@ export const Header = () => {
           </div>
         </div>
       </header>
+      {/* Begin Mobile Nav Menu */}
       {isMobileNavOpen && (
         <div className="fixed top-18 left-0 bottom-0 right-0 bg-gray-950 z-30 overflow-hidden">
+          <div className="absolute inset-0 -z-10 opacity-90 bg-[radial-gradient(circle_farthest-corner,var(--color-fuchsia-900)_50%,var(--color-indigo-900)_75%,transparent)] [mask-image:radial-gradient(circle_farthest-side,black,transparent)]"></div>
           <div className="absolute-center isolate -z-10">
             <Orbit />
           </div>

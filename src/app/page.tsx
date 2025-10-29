@@ -1,6 +1,7 @@
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
-import Companies, { companies } from "@/sections/Companies";
+import { Companies } from "@/sections/Companies";
+import { Features } from "@/sections/Features";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Companies />
+      <Features />
     </>
   );
 }

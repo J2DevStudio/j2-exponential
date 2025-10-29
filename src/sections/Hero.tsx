@@ -9,12 +9,8 @@ import { Orbit } from "@/components/Orbit";
 import { Planet } from "@/components/Planet";
 import { SectionBorder } from "@/components/SectionBorder";
 import starsBG from "@/assets/images/stars.png";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+//import { useMotionValueEvent } from "framer-motion";
 import { useRef } from "react";
 import { SectionContent } from "@/components/SectionContent";
 
