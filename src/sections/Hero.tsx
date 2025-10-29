@@ -1,3 +1,5 @@
+"use client";
+
 import robotImg from "@/assets/images/robot.jpg";
 import underlineImage from "@/assets/images/underline.svg?url";
 import Loader from "@/assets/images/loader.svg";
@@ -5,13 +7,55 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Orbit } from "@/components/Orbit";
 import { Planet } from "@/components/Planet";
+import starsBG from "@/assets/images/stars.png";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
 export const Hero = () => {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  //* value of scrollYProgress changes from 0 to 1 as you scroll from top to bottom of section *//
+  // useMotionValueEvent(scrollYProgress, "change", (value) => {
+  //   console.log("scrollYProgress", value);
+  // });
+  //* using it to translate it to a much bigger range of values: from -300 to 300 *//
+
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300]
+  );
+
   return (
     <section>
       <div className="container">
         <div className="border-l border-r border-[var(--color-border)]">
-          <div className="container py-24 md:py-36 lg:py-48 relative isolate overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <motion.div
+            ref={sectionRef}
+            className="container py-24 md:py-36 lg:py-48 relative isolate overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+            style={{
+              backgroundImage: `url(${starsBG.src})`,
+              backgroundPositionY,
+            }}
+            animate={{
+              backgroundPositionX: starsBG.width,
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 200,
+              ease: "linear",
+            }}
+          >
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_farthest-corner,var(--color-fuchsia-900)_50%,var(--color-indigo-900)_75%,transparent)] [mask-image:radial-gradient(circle_farthest-side,black,transparent)]"></div>
             <div className="absolute inset-0 -z-10"></div>
             <div className="absolute-center">
@@ -111,7 +155,7 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
