@@ -11,7 +11,7 @@ export const pricingTiers = [
   {
     title: "Basic",
     description: "AI chatbot, personalized recommendations",
-    price: "Free",
+    price: 129,
     buttonText: "Get Started",
     buttonVariant: "secondary",
     features: [
@@ -25,7 +25,7 @@ export const pricingTiers = [
   {
     title: "Premium",
     description: "Advanced AI capabilities for enhanced productivity",
-    price: 99,
+    price: 199,
     buttonText: "Upgrade to Premium",
     buttonVariant: "secondary",
     features: [
