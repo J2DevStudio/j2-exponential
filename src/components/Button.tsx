@@ -15,7 +15,8 @@ const classes = cva(
       },
       variant: {
         primary: "border-gradient",
-        secondary: "bg-gray-100 text-gray-950 hover:text-white transition",
+        secondary:
+          "bg-gray-100 text-gray-950 hover:text-white hover:bg-gray-950 hover:border hover:border-white transition",
         tertiary: "bg-gray-800 text-gray-200 hover:text-white transition",
       },
     },

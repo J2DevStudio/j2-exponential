@@ -35,13 +35,13 @@ export const Hero = () => {
   );
 
   return (
-    <section>
+    <section id="hero">
       <div className="container">
         <SectionBorder>
           <SectionContent className="relative isolate [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
             <motion.div
               ref={sectionRef}
-              className=""
+              className="z-10"
               style={{
                 backgroundImage: `url(${starsBG.src})`,
                 backgroundPositionY,
@@ -92,7 +92,7 @@ export const Hero = () => {
                 productivity and streamline your workflow with our new
                 cutting-edge AI automation platform.
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-center isolate z-20">
                 <Button variant="secondary" className="mt-10">
                   Start Chatting
                 </Button>

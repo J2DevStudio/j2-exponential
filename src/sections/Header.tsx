@@ -28,14 +28,14 @@ export const navItems = [
 
 export const loginItems = [
   {
-    buttonVariant: "tertiary",
+    buttonVariant: "secondary",
     name: "Login",
-    href: "#login",
+    href: "#header",
   },
   {
     buttonVariant: "primary",
     name: "Sign Up",
-    href: "#sign-up",
+    href: "#header",
   },
 ] satisfies {
   name: string;
@@ -49,13 +49,14 @@ export const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
     <>
-      <header className="border-b border-gray-200/20 relative z-40">
+      <header id="header" className="border-b border-gray-200/20 relative z-40">
         <div className="container">
           <div className="h-18 lg:h-20 flex justify-between items-center">
             <div className="flex gap-4 items-center">
               <Logo />
               <div className="font-extrabold text-2xl">Exponential</div>
             </div>
+            {/* Begin Desktop Nav Menu */}
             <div className="h-full hidden lg:block">
               <nav className="h-full">
                 {navItems.map(({ name, href }) => (
@@ -63,6 +64,13 @@ export const Header = () => {
                     href={href}
                     key={href}
                     className="h-full inline-flex items-center px-10 relative font-bold text-sm hover:text-white transition tracking-widest text-gray-400 uppercase before:content-[''] before:absolute before:bottom-0 before:h-3 before:left-0 before:w-px before:bg-gray-200/20 after:content-[''] after:absolute after:bottom-0 after:h-3 after:right-0 after:w-px after:bg-gray-200/20 after:hidden last:after:block"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.querySelector(href);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                   >
                     {name}
                   </a>
@@ -128,6 +136,14 @@ export const Header = () => {
                   href={href}
                   key={name}
                   className="text-gray-400 uppercase tracking-widest font-bold text-sm hover:text-white transition shadow-slate-950 h-10"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                      setIsMobileNavOpen(false);
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                 >
                   {name}
                 </a>

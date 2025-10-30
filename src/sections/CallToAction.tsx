@@ -53,7 +53,7 @@ export const CallToAction = () => {
               />
             </div>
 
-            <h2 className="text-gray-200 font-semibold text-3xl md:text-4xl lg:text-5xl lg:max-w-3xl lg:mx-auto text-center leading-tight relative px-14">
+            <h2 className="text-gray-200 font-semibold text-3xl md:text-4xl lg:text-5xl lg:max-w-3xl md:max-w-lg max-w-sm mx-auto text-center leading-tight relative px-14">
               Join the AI Revoluton with{" "}
               <span className="relative isolate">
                 <span>Exponential</span>
